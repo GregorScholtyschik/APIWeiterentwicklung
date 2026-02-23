@@ -519,10 +519,10 @@ jobs:
               body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 40px; }
               a { display: inline-block; padding: 12px 14px; border: 1px solid #ddd; border-radius: 12px; text-decoration: none; color: inherit; margin-right: 10px; }
               a:hover { background: rgba(0,0,0,.03); }
-              h1 { color: #3309c9; }
+              h1 { color: #3603f0; }
               .item { margin: 14px 0; }
-              .meta { color: #666; margin: 6px 0 0 0; }
-              code { background: rgba(0,0,0,.06); padding: 2px 6px; border-radius: 8px; }
+              .meta { color: #031bf7; margin: 6px 0 0 0; }
+              code { background: rgba(211, 195, 51, 0.36); padding: 2px 6px; border-radius: 8px; }
             </style>
           </head>
           <body>
@@ -533,7 +533,7 @@ jobs:
               <p>
                 <a href="./aktuell-gueltig/">API-Webdienste</a><br />
                 <span class="meta"><code>main</code></span><br />
-                <span class="meta">enthält API-Webdienste</span>
+                <span class="meta">API-Webdienste</span>
               </p>
             </div>
 
