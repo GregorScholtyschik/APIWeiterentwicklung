@@ -501,11 +501,11 @@ jobs:
           make_ui "site/aktuell-gueltig" "API-Dokumentation – Aktuell gültig" "Aktuell gültig"
 
           if [[ "${{ steps.consult.outputs.exists }}" == "true" ]]; then
-            make_ui "site/konsultation" "API-Dokumentation – Zur Konsultation gestellt" "Zur Konsultation gestellt"
+            make_ui "site/konsultation" "API-Dokumentation – Zur Konsultation gestellt" "Test"
           fi
 
           if [[ "${{ steps.future.outputs.exists }}" == "true" ]]; then
-            make_ui "site/zukuenftig-gueltig" "API-Dokumentation – Zukünftig gültig" "Zukünftig gültig"
+            make_ui "site/zukuenftig-gueltig" "API-Dokumentation – Zukünftig gültig" "Test 2"
           fi
 
           cat > site/index.html <<'HTML'
@@ -514,29 +514,30 @@ jobs:
           <head>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>API-Dokumentation</title>
+            <title>API-Dokumentation Tests</title>
             <style>
               body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 40px; }
               a { display: inline-block; padding: 12px 14px; border: 1px solid #ddd; border-radius: 12px; text-decoration: none; color: inherit; margin-right: 10px; }
               a:hover { background: rgba(0,0,0,.03); }
-              h1 { color: #C20000; }
+              h1 { color: #3309c9; }
               .item { margin: 14px 0; }
               .meta { color: #666; margin: 6px 0 0 0; }
               code { background: rgba(0,0,0,.06); padding: 2px 6px; border-radius: 8px; }
             </style>
           </head>
           <body>
-            <h1>API-Dokumentation</h1>
+            <h1>API-Dokumentation Tests</h1>
             <p>Bitte wählen:</p>
 
             <div class="item">
               <p>
-                <a href="./aktuell-gueltig/">Aktuell gültig</a><br />
+                <a href="./aktuell-gueltig/">API-Webdienste</a><br />
                 <span class="meta"><code>main</code></span><br />
-                <span class="meta">enthält die aktuell gültigen Versionen</span>
+                <span class="meta">enthält API-Webdienste</span>
               </p>
             </div>
 
+            <!--
             <div class="item">
               <p>
                 <a href="./konsultation/">Zur Konsultation gestellt</a><br />
@@ -552,6 +553,7 @@ jobs:
                 <span class="meta">enthält die aktuell gültigen und zukünftig gültigen Versionen</span>
               </p>
             </div>
+            -->
           </body>
           </html>
           HTML
