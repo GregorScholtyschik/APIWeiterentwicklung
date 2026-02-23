@@ -1,0 +1,506 @@
+openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
+info: # Allgemeine Infos zur Schnittstelle
+  title: EDI@Energy API-Webdienste zur prozessualen Abwicklung von Steuerungshandlungen in Verbindung mit intelligenten Messsystemen (iMS) -  Universalbestellprozess
+  version: 2.0.0
+  description: Mit diesen API-Webdiensten werden die Steuerungshandlungen in Verbindung mit intelligenten Messsystemen umgesestzt.
+  
+servers: # URLs unter der die API bereitsteht
+  - url: https://github.com/EDI-Energy
+    description: GitHub-Server der EDI@Energy
+  
+
+paths:
+  /steuerbefehl/konfiguration/v2:
+    post:
+      summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf einen Leistungswert.
+      description: ""
+      operationId: uploadFile
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl/commandControl.yaml#/components/schemas/commandControl'
+      responses:
+        "202":
+          description: accepted  
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+
+  /steuerbefehl/initialZustand/v2:
+    post:
+      summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf den ursprünglichen Zustand.
+      description: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl/commandRegular.yaml#/components/schemas/commandRegular'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+ 
+  /steuerbefehl/vorlaeufigePositiveAntwort/v2:
+    post:
+      summary: Vorläufige positive Mitteilung zum weiteren Vorgehen
+      description: ""
+      operationId: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl/preliminaryResultPositiveControlMeasures.yaml#/components/schemas/preliminaryResultPositiveControlMeasures'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+
+  /steuerbefehl/vorlaeufigeNegativeAntwort/v2:
+    post:
+      summary: Negative Mitteilung zum weiteren Vorgehen
+      description: ""
+      operationId: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+
+  /steuerbefehl/positiveAntwort/v2:
+    post:
+      summary: Positive Antwort auf den Steuerbefehl
+      description: ""
+      operationId: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl/resultPositiveControlMeasures.yaml#/components/schemas/resultPositiveControlMeasures'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+
+  /steuerbefehl/negativeAntwort/v2:
+    post:
+      summary: Negative Antwort auf den Steuerbefehl
+      description: ""
+      operationId: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+          schema:
+            $ref: '../../schema/commandControl/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+
+  /steuerbefehl/informationAnweisung/v2:
+    post:
+      summary: Information zum Steuerbefehl an Anweisenden, dass finaler Status noch nicht vorliegt.
+      description: ""
+      operationId: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl/resultUnknownControlMeasures.yaml#/components/schemas/resultUnknownControlMeasures'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+
+  /steuerbefehl/information/v2:
+    post:
+      summary: Information
+      description: ""
+      operationId: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl/commandInformation.yaml#/components/schemas/commandInformation'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
