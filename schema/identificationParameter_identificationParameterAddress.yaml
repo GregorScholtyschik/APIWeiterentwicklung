@@ -1,0 +1,15 @@
+components:
+  schemas:
+    identificationParameter_identificationParameterAddress:
+      type: object
+      x-Translation:
+        de: "Identfikationsparameter Adressen"
+      properties:
+        name:
+          $ref: './person/name.yaml#/components/schemas/name'
+        address:
+          $ref: './address/address.yaml#/components/schemas/address'
+        landParcels:
+          $ref: './landParcels/landParcels.yaml#/components/schemas/landParcels'
+        geographicCoordinates:
+          $ref: './geographicCoordinates/geographicCoordinates.yaml#/components/schemas/geographicCoordinates'

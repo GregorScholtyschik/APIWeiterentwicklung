@@ -1,0 +1,23 @@
+components:
+  schemas:
+    overviewOfLocationsOfOneMarketLocation:
+      description: "Mit diesem API-Webdienste werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranche(n), Technische Ressource(n), Steuerbare Ressource(n), etc.) und den jeweils zugeordneten Marktpartner übermittelt. Zudem werden weitere Eigenschfaten der Marktlokation übermittelt." 
+      required:
+      - marketLocation
+      type: object
+      x-Translation:
+        de: "Übersicht von Lokationen"
+      properties:
+        marketLocation:
+          $ref: './marketLocation/marketLocation.yaml#/components/schemas/marketLocation'
+        tranches:
+          $ref: './tranche/tranches.yaml#/components/schemas/tranches'
+        meterLocations:
+          $ref: './meterLocation/meterLocations.yaml#/components/schemas/meterLocations'
+        technicalResources:
+          $ref: './technicalResource/technicalResources.yaml#/components/schemas/technicalResources'
+        controllableResources:
+          $ref: './controllableResource/controllableResources.yaml#/components/schemas/controllableResources'
+        networkLocations:
+          $ref: './networkLocation/networkLocations.yaml#/components/schemas/networkLocations'
+ 

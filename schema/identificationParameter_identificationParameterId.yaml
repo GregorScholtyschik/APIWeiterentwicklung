@@ -1,0 +1,17 @@
+components:
+  schemas:
+    identificationParameter_identificationParameterId:
+      type: object
+      x-Translation:
+        de: "Identfikationsparameter IDs"
+      properties:
+        identifierMarketLocation:
+          $ref: './identifier/maloId.yaml#/components/schemas/maloId'
+        identifierMarketTranches:
+          $ref: './identifier/maloIds.yaml#/components/schemas/maloIds'
+        identifierMeterLocations:
+          $ref: './identifier/meloIds.yaml#/components/schemas/meloIds'
+        meterNumbers:
+          $ref: './identifier/meterNumbers.yaml#/components/schemas/meterNumbers'
+        customerNumber:
+          $ref: './customerNumber.yaml#/components/schemas/customerNumber'

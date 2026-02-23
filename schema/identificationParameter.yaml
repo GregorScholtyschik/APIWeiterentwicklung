@@ -1,0 +1,20 @@
+components:
+  schemas:
+    identificationParameter:
+      required:
+      - identificationDateTime
+      - energyDirection
+      - identificationParameterAddress
+      type: object
+      x-Translation:
+        de: "Identifikationsparameter"
+      properties:
+        identificationDateTime:
+          $ref: './dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt zu dem die Identifikation stattfinden soll"
+        energyDirection:
+          $ref: './marketLocation/energyDirection.yaml#/components/schemas/energyDirection'
+        identificationParameterId:
+          $ref: './identificationParameter_identificationParameterId.yaml#/components/schemas/identificationParameter_identificationParameterId'
+        identificationParameterAddress:
+          $ref: './identificationParameter_identificationParameterAddress.yaml#/components/schemas/identificationParameter_identificationParameterAddress'
