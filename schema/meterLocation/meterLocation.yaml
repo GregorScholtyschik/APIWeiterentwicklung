@@ -1,0 +1,18 @@
+components:
+  schemas:
+    meterLocation:
+      required:
+      - meterLocationMeasuringPointOperators
+      - identifierMeterLocation
+      - meterNumber
+      type: object
+      x-Translation:
+        de: "Messlokation"
+      properties:
+        identifierMeterLocation:
+          $ref: './../identifier/meloId.yaml#/components/schemas/meloId'
+        meterNumber:
+          $ref: './../identifier/meterNumber.yaml#/components/schemas/meterNumber'
+        meterLocationMeasuringPointOperators:
+          $ref: './meterLocationMeasuringPointOperators.yaml#/components/schemas/meterLocationMeasuringPointOperators'
+ 

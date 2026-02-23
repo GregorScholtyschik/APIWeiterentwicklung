@@ -1,0 +1,8 @@
+components:
+  schemas:
+    subLotNumber:
+      type: string
+      description: "Angabe der Flurstücksnummer (des Flurstücks)."
+      x-Translation:
+        de: "Flurstücksnummer"
+      example: "34"

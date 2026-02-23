@@ -1,0 +1,8 @@
+components:
+  schemas:
+    zipCode:
+      type: string
+      description: "Angabe der Postleitzahl einer postalischen Adresse"
+      x-Translation:
+        de: "Postleitzahl"
+      example: "12117"

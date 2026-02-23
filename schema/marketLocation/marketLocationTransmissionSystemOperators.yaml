@@ -1,0 +1,9 @@
+components:
+  schemas:
+     marketLocationTransmissionSystemOperators:
+      type: array
+      x-Translation:
+        de: "Übertragungsnetzbetreiber an der Marktlokation"
+      minItems: 1
+      items:
+        $ref: './marketLocationTransmissionSystemOperator.yaml#/components/schemas/marketLocationTransmissionSystemOperator'

@@ -1,0 +1,8 @@
+components:
+  schemas:
+    landParcels:
+      type: array
+      x-Translation:
+        de: "Grundstücke"
+      items:
+        $ref: './landParcel.yaml#/components/schemas/landParcel'

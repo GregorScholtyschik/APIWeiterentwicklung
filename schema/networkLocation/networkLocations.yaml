@@ -1,0 +1,8 @@
+components:
+  schemas:
+    networkLocations:
+      type: array
+      x-Translation:
+        de: "Netzlokationen"
+      items:
+        $ref: './networkLocation.yaml#/components/schemas/networkLocation'

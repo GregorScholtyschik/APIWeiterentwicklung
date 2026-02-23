@@ -1,0 +1,17 @@
+components:
+  schemas:
+    marketLocationMeasuringPointOperator:
+      required:
+      - executionTimeFrom
+      - identifierMeasuringPointOperator
+      type: object
+      x-Translation:
+        de: "Messstellenbetreiber an der Marktlokation"
+      properties:
+        identifierMeasuringPointOperator:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+

@@ -1,0 +1,16 @@
+components:
+  schemas:
+    marketLocationTransmissionSystemOperator:
+      required:
+      - executionTimeFrom
+      - identifierTransmissionSystemOperator
+      type: object
+      x-Translation:
+        de: "Übertragungsnetzbetreiber an der Marktlokation"
+      properties:
+        identifierTransmissionSystemOperator:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

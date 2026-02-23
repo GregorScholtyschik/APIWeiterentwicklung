@@ -1,0 +1,8 @@
+components:
+  schemas:
+    meterNumbers:
+      type: array
+      x-Translation:
+        de: "Zählernummern / Gerätenummern"
+      items:
+        $ref: './meterNumber.yaml#/components/schemas/meterNumber'

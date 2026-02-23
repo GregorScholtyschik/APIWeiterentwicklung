@@ -1,0 +1,8 @@
+components:
+  schemas:
+    marketLocationCharacteristics:
+      type: array
+      x-Translation:
+        de: "Eigenschaft der Marktlokation"
+      items:
+        $ref: './marketLocationCharacteristic.yaml#/components/schemas/marketLocationCharacteristic'

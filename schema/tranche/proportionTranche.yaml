@@ -1,0 +1,11 @@
+components:
+  schemas:
+   proportionTranche:
+      type: string
+      x-Translation:
+        de: "Anteil"
+      description: "Gibt die Bildungslogik der Tranche an"
+      example: "percent"
+      enum:
+      - bilateralAgreement
+      - percent

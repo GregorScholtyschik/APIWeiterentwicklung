@@ -1,0 +1,12 @@
+components:
+  schemas:
+    technicalResource:
+      required:
+      - identifierTechnicalResource
+      type: object
+      x-Translation:
+        de: "Technsiche Ressource"
+      properties:
+        identifierTechnicalResource:
+          $ref: './../identifier/trId.yaml#/components/schemas/trId'
+ 

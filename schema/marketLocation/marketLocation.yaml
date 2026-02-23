@@ -1,0 +1,38 @@
+components:
+  schemas:
+    marketLocation:
+      required:
+      - networkOperators
+      - transmissionSystemOperators
+      - energyDirection
+      - identifierMarketLocation
+      - measurementTechnologyClassification
+      - characteristics
+      type: object
+      x-Translation:
+        de: "Marktlokation"
+      properties:
+        identifierMarketLocation:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+        energyDirection:
+          $ref: './energyDirection.yaml#/components/schemas/energyDirection'
+        measurementTechnologyClassification:
+          $ref: './measurementTechnologyClassification.yaml#/components/schemas/measurementTechnologyClassification'
+        characteristics:
+          $ref: './marketLocationCharacteristics.yaml#/components/schemas/marketLocationCharacteristics'        
+        networkOperators:
+          $ref: './marketLocationNetworkOperators.yaml#/components/schemas/marketLocationNetworkOperators'
+        measuringPointOperators:
+          $ref: './marketLocationMeasuringPointOperators.yaml#/components/schemas/marketLocationMeasuringPointOperators'
+        transmissionSystemOperators:
+          $ref: './marketLocationTransmissionSystemOperators.yaml#/components/schemas/marketLocationTransmissionSystemOperators'
+        suppliers:
+          $ref: './marketLocationSuppliers.yaml#/components/schemas/marketLocationSuppliers'
+        name:
+          $ref: './../person/name.yaml#/components/schemas/name'
+        address:
+          $ref: './../address/address.yaml#/components/schemas/address'
+        landParcels:
+          $ref: './../landParcels/landParcels.yaml#/components/schemas/landParcels'
+        geographicCoordinates:
+          $ref: './../geographicCoordinates/geographicCoordinates.yaml#/components/schemas/geographicCoordinates'

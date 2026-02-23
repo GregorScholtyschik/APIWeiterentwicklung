@@ -1,0 +1,16 @@
+components:
+  schemas:
+    trancheSupplier:
+      required:
+      - executionTimeFrom
+      - identifierSupplier
+      type: object
+      x-Translation:
+        de: "Zugeordneter Lieferant an der Tranche"
+      properties:
+        identifierSupplier:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

@@ -1,0 +1,10 @@
+components:
+  schemas:
+    reasonNegativeControlMeasures:
+      type: string
+      description: "Grund"
+      example: "communicationFailure"
+      enum:
+      - communicationFailure
+      - overload
+      - unable

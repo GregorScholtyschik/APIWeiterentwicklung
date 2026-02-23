@@ -1,0 +1,16 @@
+components:
+  schemas:
+    marketLocationCharacteristic:
+      required:
+      - executionTimeFrom
+      - marketLocationProperty
+      type: object
+      x-Translation:
+        de: "Eigenschaft der Marktlokation"
+      properties:
+        marketLocationProperty:
+          $ref: './marketLocationProperty.yaml#/components/schemas/marketLocationProperty'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

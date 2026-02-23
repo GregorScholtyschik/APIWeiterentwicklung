@@ -1,0 +1,15 @@
+components:
+  schemas:
+    resultPositiveControlMeasures:
+      description: 
+      required:
+      - locationId
+      - statePositiveControlMeasures
+      type: object
+      properties:
+        locationId:
+          oneOf:
+            - $ref: './../identifier/srId.yaml#/components/schemas/srId'
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
+        statePositiveControlMeasures:
+          $ref: './statePositiveControlMeasures.yaml#/components/schemas/statePositiveControlMeasures'

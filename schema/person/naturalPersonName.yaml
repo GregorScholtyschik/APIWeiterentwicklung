@@ -1,0 +1,13 @@
+components:
+  schemas:
+    naturalPersonName:
+      type: object
+      x-Translation:
+        de: "Natürliche Person"
+      properties:
+        surname:
+          $ref: './surname.yaml#/components/schemas/surname'
+        firstname:
+          $ref: './firstName.yaml#/components/schemas/firstName'
+        title:
+          $ref: './title.yaml#/components/schemas/title'

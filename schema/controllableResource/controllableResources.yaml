@@ -1,0 +1,8 @@
+components:
+  schemas:
+     controllableResources:
+      type: array
+      x-Translation:
+        de: "Steuerbare Ressourcen"
+      items:
+        $ref: './controllableResource.yaml#/components/schemas/controllableResource'

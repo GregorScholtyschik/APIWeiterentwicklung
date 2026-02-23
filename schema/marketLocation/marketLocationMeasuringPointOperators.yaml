@@ -1,0 +1,8 @@
+components:
+  schemas:
+    marketLocationMeasuringPointOperators:
+      type: array
+      x-Translation:
+        de: "Messstellenebtreiber an der Marktlokation"
+      items:
+        $ref: './marketLocationMeasuringPointOperator.yaml#/components/schemas/marketLocationMeasuringPointOperator'

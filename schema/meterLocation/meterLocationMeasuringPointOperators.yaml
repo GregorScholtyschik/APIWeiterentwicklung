@@ -1,0 +1,8 @@
+components:
+  schemas:
+    meterLocationMeasuringPointOperators:
+      type: array
+      x-Translation:
+        de: "Messstellenbetreiber an der Messlokation"
+      items:
+        $ref: './meterLocationMeasuringPointOperator.yaml#/components/schemas/meterLocationMeasuringPointOperator'

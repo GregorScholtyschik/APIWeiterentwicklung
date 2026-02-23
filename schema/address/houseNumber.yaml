@@ -1,0 +1,8 @@
+components:
+  schemas:
+    houseNumber:
+      type: integer
+      description: "Angabe der Hausnummer einer postalischen Adresse"
+      x-Translation:
+        de: "Hausnummer"
+      example: 32

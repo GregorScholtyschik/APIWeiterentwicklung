@@ -1,0 +1,19 @@
+components:
+  schemas:
+    commandControl:
+      required:
+      - locationId
+      - maximumPowerValue
+      - executionTimeFrom
+      type: object
+      properties:
+        locationId:
+          oneOf:
+            - $ref: './../identifier/srId.yaml#/components/schemas/srId'
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
+        maximumPowerValue:
+          $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

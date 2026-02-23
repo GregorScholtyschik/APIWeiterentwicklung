@@ -1,0 +1,9 @@
+components:
+  schemas:
+    legalPersonName:
+      type: object
+      x-Translation:
+        de: "Juristsiche Person"
+      properties:
+        company:
+          $ref: './company.yaml#/components/schemas/company'

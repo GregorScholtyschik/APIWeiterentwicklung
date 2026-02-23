@@ -1,0 +1,8 @@
+components:
+  schemas:
+    marketLocationDateTimes:
+      type: array
+      x-Translation:
+        de: "Zeitscheiben einer Marktlokation"
+      items:
+        $ref: './marketLocationDateTime.yaml#/components/schemas/marketLocationDateTime'
