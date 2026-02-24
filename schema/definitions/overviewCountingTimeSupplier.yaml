@@ -1,0 +1,12 @@
+components:
+  schemas:
+    overviewCountingTimeSupplier:
+      required:
+      - gueltigAb
+      type: object
+      x-Translation:
+        de: "Übersicht der Zählzeiten eines LF"
+      properties:
+        gueltigAb:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab"
