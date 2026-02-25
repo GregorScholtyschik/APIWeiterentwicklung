@@ -2,7 +2,7 @@ components:
   schemas:
       codeRegister:
         type: array
-        minItems: 2
+        minItems: 5
         x-Translation:
           de: "Code der Register"
         items:
