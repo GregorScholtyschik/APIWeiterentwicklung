@@ -1,0 +1,11 @@
+components:
+  schemas:
+    listeOderKeineListe:
+      type: object
+      x-Translation:
+        de: "Liste oder keine Liste"
+      properties:
+        name:
+          oneOf:
+           - $ref: './listeDefinitionen.yaml#/components/schemas/listeDefinitionen'
+           - $ref: './legalPersonName.yaml#/components/schemas/legalPersonName' 

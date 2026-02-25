@@ -15,6 +15,12 @@ components:
         versionsangabe:
           $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
           description: "Versionsangabe"
-        wirdDefinitionVerwendet:
-          $ref: './../definitions/wirdDefinitionVerwendet.yaml#/components/schemas/wirdDefinitionVerwendet'
-          description: "Angabe, ob eine deiniftion verwednet wird"
+        referenzAufReklamation:
+          $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
+          description: "Referenz auf eine mögliche Reklamation"
+        listeDefinitionen:
+          $ref: './../definitions/listeDefinition.yaml#/components/schemas/listeDefinitionen'
+          description: "Liste der Definitionen"
+
+
+          

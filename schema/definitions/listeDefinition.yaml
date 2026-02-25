@@ -1,0 +1,22 @@
+components:
+  schemas:
+    listeDefinition:
+      required:
+      - codeDerZaehlzeitdefinition
+      - haeufigkeitUebermittlung
+      type: object
+      x-Translation:
+        de: "Liste der Definitionen"
+      properties:
+        codeDerZaehlzeitdefinition:
+          $ref: './codeAn3.yaml#/components/schemas/codeAn3'
+        haeufigkeitUebermittlung:
+          $ref: './haeufigkeitUebermittlung.yaml#/components/schemas/haeufigkeitUebermittlung'
+
+    listeDefinitionen:
+      type: array
+      minItems: 0
+      x-Translation:
+        de: "Liste der Definitionen"
+      items:
+        $ref: './listeDefinition.yaml#/components/schemas/listeDefinition'
