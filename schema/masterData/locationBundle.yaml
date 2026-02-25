@@ -12,5 +12,5 @@ components:
           $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
           description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID"
         locationBundleObjects:
-          $ref: './LocationBundleObjects.yaml#/components/schemas/locationBundleObjects'
+          $ref: './locationBundleObjects.yaml#/components/schemas/locationBundleObjects'
           description: "Die Liste der Lokationsbündel-Objekte"

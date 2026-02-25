@@ -1,0 +1,27 @@
+components:
+  schemas:
+    locationBundleObject:
+      required:
+      - executionDateTime
+      - neloReferences
+      - meloReferences
+      - maloReferences
+      type: object
+      x-Translation:
+        de: "Eine Netzlokation mit ihren zugehörigen Messlokationen"
+      properties:
+        executionDateTime:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Das Datum ab dem das Lokationsbündel gültig ist"
+        srIds:
+          $ref: './../identifier/srIds.yaml#/components/schemas/srIds'
+          description: "Die Liste der steuerbaren Ressourcen im Lokationsbündel ohne Zuordnung zu einem Objekt"
+        neloReferences:
+          $ref: './locationBundleNeloReferences.yaml#/components/schemas/locationBundleNeloReferences'
+          description: "Die Liste der Netzlokationen, die dem Lokationsbündel zugeordnet sind"
+        meloReferences:
+          $ref: './locationBundleMeloReferences.yaml#/components/schemas/locationBundleMeloReferences'
+          description: "Die Liste der Messlokationen, die dem Lokationsbündel zugeordnet sind"
+        maloReferences:
+          $ref: './locationBundleMaloReferences.yaml#/components/schemas/locationBundleMaloReferences'
+          description: "Die Liste der Marklokationen, die dem Lokationsbündel zugeordnet sind"
