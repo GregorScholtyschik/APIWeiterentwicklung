@@ -5,4 +5,4 @@ components:
       x-Translation:
         de: "Lokationsbündel-Objekte"
       items:
-        $ref: './masterData/locationBundleObject.yaml#/components/schemas/locationBundleObject'
+        $ref: './locationBundleObject.yaml#/components/schemas/locationBundleObject'
