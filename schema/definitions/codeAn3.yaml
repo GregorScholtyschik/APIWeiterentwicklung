@@ -6,4 +6,4 @@ components:
       description: "Code alphanumerisch bis zu drei Stellen an..3"
       x-Translation:
         de: "Code alphanumerisch bis zu drei Stellen"
-      example: "ab8"
+      example: "4b8"
