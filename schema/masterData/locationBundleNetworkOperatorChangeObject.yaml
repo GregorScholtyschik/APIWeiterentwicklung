@@ -1,27 +1,28 @@
 components:
   schemas:
-    locationBundleObject:
+    locationBundleNetworkOperatorChangeObject:
       required:
-      - executionDateTime
       - neloReferences
       - meloReferences
       - maloReferences
+      - trancheReferences
+      - srReferences
       type: object
       x-Translation:
-        de: "Eine Netzlokation mit ihren zugehörigen Messlokationen"
+        de: "Alle Lokationen mit ihren zugehörigen Messlokationen"
       properties:
-        executionDateTime:
-          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
-          description: "Das Datum ab dem das Lokationsbündel gültig ist"
-        srIds:
-          $ref: './../identifier/srIds.yaml#/components/schemas/srIds'
-          description: "Die Liste der steuerbaren Ressourcen im Lokationsbündel ohne Zuordnung zu einem Objekt"
         neloReferences:
-          $ref: './locationBundleNeloReferences.yaml#/components/schemas/locationBundleNeloReferences'
-          description: "Die Liste der Netzlokationen, die dem Lokationsbündel zugeordnet sind"
+          $ref: './locationBundleNetworkOperatorChangeNeloReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeNeloReferences'
+          description: "Die Liste der Netzlokationen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern"
         meloReferences:
-          $ref: './locationBundleMeloReferences.yaml#/components/schemas/locationBundleMeloReferences'
-          description: "Die Liste der Messlokationen, die dem Lokationsbündel zugeordnet sind"
+          $ref: './locationBundleNetworkOperatorChangeMeloReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeMeloReferences'
+          description: "Die Liste der Messlokationen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern"
         maloReferences:
-          $ref: './locationBundleMaloReferences.yaml#/components/schemas/locationBundleMaloReferences'
-          description: "Die Liste der Marklokationen, die dem Lokationsbündel zugeordnet sind"
+          $ref: './locationBundleNetworkOperatorChangeMaloReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeMaloReferences'
+          description: "Die Liste der Marklokationen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern"
+        trancheReferences:
+          $ref: './locationBundleNetworkOperatorChangeTrancheReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeTrancheReferences'
+          description: "Die Liste der Tranchen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern"
+        srReferences:
+          $ref: './locationBundleNetworkOperatorChangeSrReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeSrReferences'
+          description: "Die Liste der steuerbaren Ressourcen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern"

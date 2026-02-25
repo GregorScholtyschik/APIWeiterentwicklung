@@ -9,7 +9,7 @@ components:
         de: "Eine Tranche mit ihren zugehörigen Marktpartnern"
       properties:
         regardTrancheId:
-          $ref: './../identifier/trancheId.yaml#/components/schemas/trancheId'
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
           description: "Identifiziert die Tranche mittels einer eindeutigen ID"
         supplier:
           $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
