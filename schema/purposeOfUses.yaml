@@ -1,0 +1,8 @@
+components:
+  schemas:
+    purposeOfUses:
+      type: array
+      x-Translation:
+        de: "Verwendungszwecke"
+      items:
+        $ref: './purposeOfUse.yaml#/components/schemas/purposeOfUse'
