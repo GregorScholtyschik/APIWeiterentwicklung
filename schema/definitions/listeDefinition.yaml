@@ -4,6 +4,7 @@ components:
       required:
       - codeDerZaehlzeitdefinition
       - haeufigkeitUebermittlung
+      - codeDerRegister
       type: object
       x-Translation:
         de: "Liste der Definitionen"
@@ -12,6 +13,8 @@ components:
           $ref: './codeAn3.yaml#/components/schemas/codeAn3'
         haeufigkeitUebermittlung:
           $ref: './haeufigkeitUebermittlung.yaml#/components/schemas/haeufigkeitUebermittlung'
+        codeDerRegister:
+          $ref: './codeDerRegister.yaml#/components/schemas/codeDerRegister'
 
     listeDefinitionen:
       type: array
