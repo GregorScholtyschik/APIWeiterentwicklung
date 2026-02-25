@@ -1,6 +1,6 @@
 components:
   schemas:
-    listOfCountingTime:
+    listOfCountingTimeSupplier:
       required:
       - codeCountingTime
       - frequencyTransmission
