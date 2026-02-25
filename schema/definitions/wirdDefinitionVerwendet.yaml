@@ -1,0 +1,10 @@
+components:
+  schemas:
+    wirdDefinitionVerwendet:
+      type: boolean
+      description: "Angabe, ob eine Definition genutzt wird"
+      x-Translation:
+        de: "Angabe, ob eine Definition genutzt wird"
+      example: false
+      nullable: false
+      default: true

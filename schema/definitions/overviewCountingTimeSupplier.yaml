@@ -3,6 +3,8 @@ components:
     overviewCountingTimeSupplier:
       required:
       - gueltigAb
+      - versionsangabe
+      - wirdDefinitionVerwendet
       type: object
       x-Translation:
         de: "Übersicht der Zählzeiten eines LF"
@@ -10,3 +12,9 @@ components:
         gueltigAb:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
           description: "Zeitpunkt Gültig Ab"
+        versionsangabe:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
+        wirdDefinitionVerwendet:
+          $ref: './../definitions/wirdDefinitionVerwendet.yaml#/components/schemas/wirdDefinitionVerwendet'
+          description: "Angabe, ob eine deiniftion verwednet wird"
