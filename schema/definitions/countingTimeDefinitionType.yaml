@@ -1,14 +1,15 @@
 components:
   schemas:
     countingTimeDefinitionType:
-      type: string
+      required:
+      - countingTimeDefinitionTypeEnum
+      type: object
+      description: "Angabe des Zählzeitdefinitionstypen. Das Feld description ist anzugeben, wenn es sich um einen sonstigen Zählzeitdefinitionstypen handelt."
       x-Translation:
-        de: "Zählzeitdefinitionstyp | heatPump = Wärmepumpe| nightStorageHater = Nachtspeicherheizung | offPeakWindow = Schwachlastzeifenster | otherCountingTimeDefinitionType = sonstiger Zählzeitdefintionstyp | peakWindow = Hochlastzeitfenster"
-      description: "Zählzeitdefinitionstyp"
-      example: "heatPump"
-      enum:
-      - heatPump
-      - nightStorageHater
-      - offPeakWindow
-      - otherCountingTimeDefinitionType
-      - peakWindow
+        de: "Angabe des Zählzeitdefinitionstypen"
+      properties:
+        countingTimeDefinitionTypeEnum:
+          $ref: './countingTimeDefinitionTypeEnum.yaml#/components/schemas/countingTimeDefinitionTypeEnum'
+        description:
+          $ref: './../descriptionAn35.yaml#/components/schemas/descriptionAn35'
+        

@@ -6,7 +6,8 @@ components:
       - frequencyTransmission
       - determiningMaximumPowerAtypicalNetworkUsage
       - canBeOrdered
-      - codeRegister      
+      - countingTimeDefinitionType
+      - codeRegister     
       type: object
       x-Translation:
         de: "Liste der Übersicht der Zählzeitdefinitionen des NB"
@@ -21,6 +22,8 @@ components:
         canBeOrdered:
           $ref: './../trueOrFalse.yaml#/components/schemas/trueOrFalse'
           description: "Angabe, ob die Zählzeit bestellbar ist"
+        countingTimeDefinitionType:
+          $ref: './countingTimeDefinitionType.yaml#/components/schemas/countingTimeDefinitionType'
         codeRegister:
           $ref: './codeRegister.yaml#/components/schemas/codeRegister'
           description: "Code des Registers einer Zählzeit"
