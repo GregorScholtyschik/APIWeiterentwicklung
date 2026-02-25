@@ -1,0 +1,10 @@
+components:
+  schemas:
+    listOfCountingTimes:
+      type: array
+      minItems: 0
+      description: "Liste der Zählzeitdefinitionen"
+      x-Translation:
+        de: "Liste der Zählzeitdefinitionen"
+      items:
+        $ref: './listOfCountingTime.yaml#/components/schemas/listOfCountingTime'

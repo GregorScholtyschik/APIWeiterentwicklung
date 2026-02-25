@@ -1,25 +1,18 @@
 components:
   schemas:
-    listOfDefinition:
+    listOfCountingTime:
       required:
-      - codeDerZaehlzeitdefinition
+      - codeCountingTime
       - frequencyTransmission
       - codeRegister
       type: object
       x-Translation:
-        de: "Liste der Definitionen"
+        de: "Liste der Übersicht der Zählzeitdefinitionen"
       properties:
-        codeDerZaehlzeitdefinition:
+        codeCountingTime:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
         frequencyTransmission:
           $ref: './frequencyTransmission.yaml#/components/schemas/frequencyTransmission'
         codeRegister:
           $ref: './codeRegister.yaml#/components/schemas/codeRegister'
-
-    listeDefinitionen:
-      type: array
-      minItems: 0
-      x-Translation:
-        de: "Liste der Definitionen"
-      items:
-        $ref: './listeDefinition.yaml#/components/schemas/listeDefinition'
+          description: "Code des Registers einer Zählzeit"
