@@ -1,20 +1,20 @@
 openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
-  title: EDI@Energy API-Webdienst zur Ermittlung der MaLo-ID der Marktlokation
+  title: EDI@Energy API-Webdienst zur Übermittlung von Lokationsbündeln
   version: 1.0.0
-  description: Mit diesen API-Webdienst wird die Ermittlung der MaLo-ID der Marktlokation umgesetzt.
+  description: Mit diesen API-Webdienst wird die Übermittlung von Lokationsbündeln umgesetzt.
 
 paths:
   /Lokationsbündel/v1:
     post:
-      summary: Anfrage MaLo-ID der Marktlokation
-      description: Anfrage MaLo-ID der Marktlokation
+      summary: Übermittlung von Lokationsbündeln
+      description: Übermittlung von Lokationsbündeln
       tags:
-        - Anfrage MaLo-ID der Marktlokation
+        - Übermittlung von Lokationsbündeln
       parameters:
       - name: transactionId
         in: header
-        description: Externe Transaktions-Id zur eindeutigen Identifikation der Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs.
         required: true
         style: simple
         explode: false
@@ -48,7 +48,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/identificationParameter.yaml#/components/schemas/identificationParameter'
+             $ref: '../../schema/Stammdaten/Lokationsbuendel.yaml#/components/schemas/Lokationsbündel'
       responses:
         "202":
           description: accepted

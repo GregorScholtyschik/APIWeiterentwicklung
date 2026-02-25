@@ -1,0 +1,12 @@
+components:
+  schemas:
+    Lokationsbündel:
+      required:
+      - identificationDateTime
+      type: object
+      x-Translation:
+        de: "Identifikationsparameter"
+      properties:
+        identificationDateTime:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt zu dem die Identifikation stattfinden soll"
