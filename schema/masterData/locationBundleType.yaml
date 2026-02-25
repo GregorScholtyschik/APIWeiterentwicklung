@@ -1,6 +1,6 @@
 components:
   schemas:
-    ocationBundleType:
+    locationBundleType:
       type: string
       description: "Hintergrund der Gruppierung der aufgeführten Marktlokationen"
       example: "energySharing2028"

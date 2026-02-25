@@ -1,6 +1,6 @@
 components:
   schemas:
-    trId:
+    networkOperatorChangePackageId:
       pattern: "^P[A-Z\\d]{9}\\d$"
       type: string
       description: "Identifiziert das Netzbetreiberwechselpaket mittels einer eindeutigen ID"

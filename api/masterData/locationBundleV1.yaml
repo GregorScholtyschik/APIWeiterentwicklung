@@ -5,7 +5,7 @@ info: # Allgemeine Infos zur Schnittstelle
   description: Mit diesen API-Webdienst wird die Übermittlung von Lokationsbündeln umgesetzt.
 
 paths:
-  /Lokationsbündel/v1:
+  /locationBundle/v1:
     post:
       summary: Übermittlung von Lokationsbündeln
       description: Übermittlung von Lokationsbündeln
