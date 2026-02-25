@@ -1,0 +1,14 @@
+components:
+  schemas:
+      codeRegisterNetworkOperatorArray:
+        required:
+          - codeRegister
+          - istSchwachlastfaehig
+        type: object
+        x-Translation:
+          de: "Code der Register"
+        properties:
+          codeRegister:
+            $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          istSchwachlastfaehig:
+            $ref: './../trueOrFalse.yaml#/components/schemas/trueOrFalse' 

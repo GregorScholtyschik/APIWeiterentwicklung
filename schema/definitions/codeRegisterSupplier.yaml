@@ -1,6 +1,6 @@
 components:
   schemas:
-      codeRegister:
+      codeRegisterSupplier:
         type: array
         minItems: 2
         x-Translation:

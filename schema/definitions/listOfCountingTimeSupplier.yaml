@@ -14,5 +14,5 @@ components:
         frequencyTransmission:
           $ref: './frequencyTransmission.yaml#/components/schemas/frequencyTransmission'
         codeRegister:
-          $ref: './codeRegister.yaml#/components/schemas/codeRegister'
+          $ref: './codeRegisterSupplier.yaml#/components/schemas/codeRegisterSupplier'
           description: "Code des Registers einer Zählzeit"
