@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleNeloReferences:
+      type: array
+      x-Translation:
+        de: "Lokationsbündel-Objekte die auf eine Nelo referenzieren"
+      items:
+        $ref: './locationBundleNeloReference.yaml#/components/schemas/locationBundleNeloReference'
