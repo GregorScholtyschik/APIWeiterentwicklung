@@ -1,11 +1,11 @@
 components:
   schemas:
-    Lokationsbündel:
+    locationBundle:
       required:
       - identificationDateTime
       type: object
       x-Translation:
-        de: "Identifikationsparameter"
+        de: "Lokationsbündel"
       properties:
         identificationDateTime:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

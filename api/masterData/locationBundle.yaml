@@ -48,7 +48,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/Stammdaten/Lokationsbuendel.yaml#/components/schemas/Lokationsbündel'
+             $ref: '../../schema/masterData/locationBundle.yaml#/components/schemas/locationBundle'
       responses:
         "202":
           description: accepted

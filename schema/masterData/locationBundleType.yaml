@@ -1,0 +1,9 @@
+components:
+  schemas:
+    ocationBundleType:
+      type: string
+      description: "Hintergrund der Gruppierung der aufgeführten Marktlokationen"
+      example: "energySharing2028"
+      enum:
+      - energySharing2026
+      - energySharing2028
