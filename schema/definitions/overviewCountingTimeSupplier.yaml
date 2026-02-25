@@ -2,24 +2,23 @@ components:
   schemas:
     overviewCountingTimeSupplier:
       required:
-      - gueltigAb
-      - versionsangabe
-      - wirdDefinitionVerwendet
+      - executionTimeFrom
+      - version
       type: object
       x-Translation:
         de: "Übersicht der Zählzeiten eines LF"
       properties:
-        gueltigAb:
+        executionTimeFrom:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
           description: "Zeitpunkt Gültig Ab"
-        versionsangabe:
+        version:
           $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
           description: "Versionsangabe"
-        referenzAufReklamation:
+        orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        listeDefinitionen:
-          $ref: './../definitions/listeDefinition.yaml#/components/schemas/listeDefinitionen'
+        listOfDefinitions:
+          $ref: './../definitions/listOfDefinitions.yaml#/components/schemas/listOfDefinitions'
           description: "Liste der Definitionen"
 
 

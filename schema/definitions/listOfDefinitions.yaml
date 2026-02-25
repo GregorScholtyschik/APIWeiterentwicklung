@@ -1,0 +1,9 @@
+components:
+  schemas:
+    listOfDefinitions:
+      type: array
+      minItems: 0
+      x-Translation:
+        de: "Liste der Definitionen"
+      items:
+        $ref: './listOfDefinition.yaml#/components/schemas/listOfDefinition'
