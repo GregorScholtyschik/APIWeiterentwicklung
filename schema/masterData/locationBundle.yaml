@@ -2,11 +2,15 @@ components:
   schemas:
     locationBundle:
       required:
-      - identificationDateTime
+      - locationBundleId
+      - locationBundleObjects
       type: object
       x-Translation:
         de: "Lokationsbündel"
       properties:
-        identificationDateTime:
-          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
-          description: "Zeitpunkt zu dem die Identifikation stattfinden soll"
+        locationBundleId:
+          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID"
+        locationBundleObjects:
+          $ref: './LocationBundleObjects.yaml#/components/schemas/locationBundleObjects'
+          description: "Die Liste der Lokationsbündel-Objekte"
