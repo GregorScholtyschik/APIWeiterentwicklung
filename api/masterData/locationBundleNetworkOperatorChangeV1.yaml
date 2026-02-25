@@ -44,11 +44,11 @@ paths:
         explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
-      requestBody:
-        content:
-         application/json:
-           schema:
-             $ref: '../../schema/masterData/locationBundleNetworkOperatorChange.yaml#/components/schemas/locationBundleNetworkOperatorChange'
+      #requestBody:
+        #content:
+         #application/json:
+           #schema:
+            # $ref: '../../schema/masterData/locationBundleNetworkOperatorChange.yaml#/components/schemas/locationBundleNetworkOperatorChange'
       responses:
         "202":
           description: accepted

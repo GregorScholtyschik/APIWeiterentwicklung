@@ -25,6 +25,6 @@ components:
         countingTimeDefinitionType:
           $ref: './countingTimeDefinitionType.yaml#/components/schemas/countingTimeDefinitionType'
         codeRegister:
-          $ref: './codeRegister.yaml#/components/schemas/codeRegister'
+          $ref: './codeRegisterNetworkOperatorArray.yaml#/components/schemas/codeRegisterNetworkOperatorArray'
           description: "Code des Registers einer Zählzeit"
         

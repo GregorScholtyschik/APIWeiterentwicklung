@@ -1,0 +1,19 @@
+components:
+  schemas:
+    yearlyRolloutCountingTime:
+      required:
+      - codeCountingTime
+      - executionTimeFrom
+      - version
+      type: object
+      x-Translation:
+        de: "Ausgerollte Zählzeit eines LF"
+      properties:
+        codeCountingTime:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab"
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
