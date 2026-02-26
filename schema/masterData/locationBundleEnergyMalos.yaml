@@ -1,0 +1,12 @@
+components:
+  schemas:
+    locationBundleEnergyMalos:
+      required:
+      - consumptionMaloIds
+      type: object
+      x-Translation:
+        de: "Eine Liste von verbrauchenden Marktlokationen, die dem Energie-Lokationsbündel zugeordnet sind"
+      properties:
+        consumptionMaloIds:
+          $ref: './../identifier/maloIds.yaml#/components/schemas/maloIds'
+          description: "Die Liste der verbrauchenden Marktlokationen, die dem Energie-Lokationsbündel zugeordnet sind"
