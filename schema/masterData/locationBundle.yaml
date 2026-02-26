@@ -10,7 +10,7 @@ components:
       properties:
         locationBundleId:
           $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
-          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID"
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID der Lokationsbündel-ID"
         locationBundleObjects:
           $ref: './locationBundleObjects.yaml#/components/schemas/locationBundleObjects'
-          description: "Die Liste der Lokationsbündel-Objekte"
+          description: "Liste ggf. mit mehreren Zeitscheiben der im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen"
