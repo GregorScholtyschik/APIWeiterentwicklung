@@ -1,16 +1,16 @@
 openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
-  title: EDI@Energy API-Webdienst zur Übermittlung von Bündeln mehrerer Marktlokationen
+  title: EDI@Energy API-Webdienst zur Übermittlung von einem Energielokationsbündeln mehrerer Marktlokationen
   version: 1.0.0
-  description: Mit diesen API-Webdienst wird die Übermittlung von Bündeln mehrerer Marktlokationen umgesetzt. Dieses Bündel wird benötigt, um dem Markt mitzuteilen, welche Marktlokationen Bestanteil eines Energiebündels sind, das zum Beispiel für Energie-Sharing gebildet wurde. Im Fall von Energie-Sharing wird die erzeugende Marktlokation genannt, welche die Energie bereitstellt und zudem alle verbrauchenden Marktlokationen, die im Rahmen von Energie-Sharing Energie von der genannten erzeugenden Marktlokation beziehen. Die Übermittlung erfolgt in Zeitscheiben, um hinzukommende oder abgehende verbrauchende Marktlokationen darstellen zu können.
+  description: Mit diesen API-Webdienst wird die Übermittlung von Energielokationsbündeln mehrerer Marktlokationen umgesetzt. Dieses Bündel wird benötigt, um dem Markt mitzuteilen, welche Marktlokationen Bestanteil eines Energielokationsbündels sind, das zum Beispiel für Energie-Sharing gebildet wurde. Im Fall von Energie-Sharing wird die erzeugende Marktlokation genannt, welche die Energie bereitstellt und zudem alle verbrauchenden Marktlokationen, die im Rahmen von Energie-Sharing Energie von der genannten erzeugenden Marktlokation beziehen. Die Übermittlung erfolgt in Zeitscheiben, um hinzukommende oder abgehende verbrauchende Marktlokationen darstellen zu können.
 
 paths:
   /locationBundle/v1:
     post:
-      summary: Übermittlung von Bündeln mehrerer Marktlokationen
-      description: Übermittlung von Bündeln mehrerer Marktlokationen
+      summary: Übermittlung von Energielokationsbündeln mehrerer Marktlokationen
+      description: Übermittlung von Energielokationsbündeln mehrerer Marktlokationen
       tags:
-        - Übermittlung von Bündeln mehrerer Marktlokationen
+        - Übermittlung von Energielokationsbündeln mehrerer Marktlokationen
       parameters:
       - name: transactionId
         in: header
