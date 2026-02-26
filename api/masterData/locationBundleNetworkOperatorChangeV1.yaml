@@ -2,7 +2,7 @@ openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
   title: EDI@Energy API-Webdienst zur Übermittlung von Lokationsbündeln mit Nennung der zugeordneten Marktpartnern im Rahmen von Netzbetreiberwechselprozessen
   version: 1.0.0
-  description: Mit diesen API-Webdienst wird die Übermittlung von Lokationsbündeln (wie im locationBundleV1 beschrieben) mit zusätzlicher Nennung der zugeordneten Marktpartnern im Rahmen von Netzbetreiberwechselprozessen umgesetzt. Dabei werden die Marktpartner genannt, die zum Zeitpunkt des versendens der NNachricht dem NBA für den Zeitpunkt des Netzbetreiberwechsels vorliegen mitgeteilt. Eine Abbildung in Zeitscheiben findet für die Marktpartnerzuordnung nicht statt
+  description: Mit diesen API-Webdienst wird die Übermittlung von Lokationsbündeln (wie im locationBundleV1 beschrieben) mit zusätzlicher Nennung der zugeordneten Marktpartnern im Rahmen von Netzbetreiberwechselprozessen umgesetzt. Dabei werden die Marktpartner genannt, die zum Zeitpunkt des Versendens der Nachricht dem NBA für den Zeitpunkt des Netzbetreiberwechsels vorliegen mitgeteilt. Eine Abbildung in Zeitscheiben findet für die Marktpartnerzuordnung nicht statt
 
 paths:
   /locationBundle/v1:
