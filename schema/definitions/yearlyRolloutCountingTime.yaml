@@ -21,7 +21,7 @@ components:
           description: "Zeitpunkt Gültig Ab"
         executionTimeUntil:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
-          description: "Zeitpunkt Gültig Ab"
+          description: "Zeitpunkt Gültig Bis"
         version:
           $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
           description: "Versionsangabe"
