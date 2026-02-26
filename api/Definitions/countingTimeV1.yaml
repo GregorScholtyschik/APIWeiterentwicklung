@@ -121,7 +121,7 @@ paths:
         "500":
           description: Internal Server Error1
 
-  /countingTime/yearlyRolloud/v1:
+  /countingTime/yearlyRollout/v1:
     post:
       summary: Übermittlung einer jährlich ausgerollten Zählzeit eines LF oder NB
       description: Übermittlung einer jährlich ausgerollten Zählzeit eines LF oder NB
@@ -130,7 +130,7 @@ paths:
       parameters:
       - name: transactionId
         in: header
-        description: Externe Transaktions-Id zur eindeutigen Identifikation der ÜÜbermittlung einer jährlich ausgerollten Zählzeit eines LF oder NB.
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer jährlich ausgerollten Zählzeit eines LF oder NB.
         required: true
         style: simple
         explode: false
@@ -165,6 +165,64 @@ paths:
          application/json:
            schema:
              $ref: '../../schema/definitions/yearlyRolloutCountingTime.yaml#/components/schemas/yearlyRolloutCountingTime'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error1
+
+  /countingTime/uniqueRollout/v1:
+    post:
+      summary: Übermittlung einer einmalig ausgerollten Zählzeit eines LF oder NB
+      description: Übermittlung einer einmalig ausgerollten Zählzeit eines LF oder NB
+      tags:
+        - Übermittlung einer einmalig ausgerollten Zählzeit eines LF oder NB
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer einmlaig ausgerollten Zählzeit eines LF oder NB.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/definitions/uniqueRolloutCountingTime.yaml#/components/schemas/uniqueRolloutCountingTime'
       responses:
         "202":
           description: accepted
