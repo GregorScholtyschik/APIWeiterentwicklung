@@ -1,0 +1,20 @@
+components:
+  schemas:
+    locationBundleEnergy:
+      required:
+      - productionMaloId
+      - locationBundleType
+      - locationBundleEnergyMalo
+      type: object
+      x-Translation:
+        de: "Energie-Lokationsbündel"
+      properties:
+        productionMaloId:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Identifiziert die erzeugende Marktlokation, die den weitern verbrauchenden Marktlokationen Energie bereitstellt"
+        locationBundleType:
+          $ref: './locationBundleType.yaml#/components/schemas/locationBundleType'
+          description: "Art des Energie Lokationsbündels, d.h. Hintergrund der Gruppierung der aufgeführten Marktlokationen"
+        locationBundleEnergyMalo:
+          $ref: './locationBundleEnergyObject.yaml#/components/schemas/locationBundleEnergyObject'
+          description: "Die Liste der verbrauchenden Marktlokationen, die mit der erzeugenden Marktlokation in Verbindung stehen"
