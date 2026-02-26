@@ -2,16 +2,16 @@ components:
   schemas:
     locationBundleNetworkOperatorChange:
       required:
-      - locationBundleId
+      - locationBundle
       - networkOperatorChangePackageId
       - locationBundleNetworkOperatorChangeObject
       type: object
       x-Translation:
         de: "Lokationsbündel"
       properties:
-        locationBundleId:
-          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
-          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID"
+        locationBundle:
+          $ref: '../../schema/masterData/locationBundle.yaml#/components/schemas/locationBundle'
+          description: "vollständige Lokationsbündel "
         networkOperatorChangePackageId:
           $ref: './../identifier/networkOperatorChangePackageId.yaml#/components/schemas/networkOperatorChangePackageId'
           description: "Identifiziert das Netzbetreiberwechsel-Paket mittels einer eindeutigen ID"
