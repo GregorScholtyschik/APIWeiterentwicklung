@@ -10,7 +10,7 @@ components:
       properties:
         executionDateTime:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
-          description: "Das Datum ab dem das Energie-Lokationsbündel gültig ist"
+          description: "Das Datum ab dem das Energie-Lokationsbündel in der Zusammensetzung der verbrauchendenMarktlokationen gültig ist"
         maloReferences:
           $ref: './locationBundleEnergyMalos.yaml#/components/schemas/locationBundleEnergyMalos'
-          description: "Die Liste der verbrauchenden Marklokationen, die dem Energie-Lokationsbündel zugeordnet sind"
+          description: "Die Liste der verbrauchenden Marklokationen, die dem Energie-Lokationsbündel zugeordnet sind und zu der Zeitscheibe gültig sind"

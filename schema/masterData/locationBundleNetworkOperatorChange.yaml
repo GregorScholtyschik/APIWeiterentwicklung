@@ -11,10 +11,10 @@ components:
       properties:
         locationBundle:
           $ref: '../../schema/masterData/locationBundle.yaml#/components/schemas/locationBundle'
-          description: "vollständige Lokationsbündel "
+          description: "vollständiges Lokationsbündel"
         networkOperatorChangePackageId:
           $ref: './../identifier/networkOperatorChangePackageId.yaml#/components/schemas/networkOperatorChangePackageId'
           description: "Identifiziert das Netzbetreiberwechsel-Paket mittels einer eindeutigen ID"
         locationBundleNetworkOperatorChangeObject:
           $ref: './locationBundleNetworkOperatorChangeObject.yaml#/components/schemas/locationBundleNetworkOperatorChangeObject'
-          description: "Die Liste der Lokationsbündel-Objekte mit zugeordneten Marktpartnern"
+          description: "Die Liste der Lokationsbündel-Objekte mit den jeweils zugeordneten Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"
