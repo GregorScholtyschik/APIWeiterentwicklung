@@ -1,9 +1,14 @@
 components:
   schemas:
       codeRegisterNetworkOperator:
-        type: array
-        minItems: 2
+        required:
+          - codeRegister
+          - istSchwachlastfaehig
+        type: object
         x-Translation:
           de: "Code der Register"
-        items:
-          $ref: './codeRegisterNetworkOperatorArray.yaml#/components/schemas/codeRegisterNetworkOperatorArray'
+        properties:
+          codeRegister:
+            $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          istSchwachlastfaehig:
+            $ref: './../trueOrFalse.yaml#/components/schemas/trueOrFalse' 

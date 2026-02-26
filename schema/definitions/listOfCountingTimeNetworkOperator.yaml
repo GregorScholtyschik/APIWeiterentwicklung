@@ -24,7 +24,7 @@ components:
           description: "Angabe, ob die Zählzeit bestellbar ist"
         countingTimeDefinitionType:
           $ref: './countingTimeDefinitionType.yaml#/components/schemas/countingTimeDefinitionType'
-        codeRegister:
-          $ref: './codeRegisterNetworkOperatorArray.yaml#/components/schemas/codeRegisterNetworkOperatorArray'
+        codeRegisters:
+          $ref: './codeRegisterNetworkOperators.yaml#/components/schemas/codeRegisterNetworkOperators'
           description: "Code des Registers einer Zählzeit"
         
