@@ -2,7 +2,7 @@ openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
   title: EDI@Energy API-Webdienst zur Übermittlung von Lokationsbündeln
   version: 1.0.0
-  description: Mit diesen API-Webdienst wird die Übermittlung von Lokationsbündeln umgesetzt. Ein Lokationsbündel beinhaltet alle Netzlokationen (in der Regel genau eine Netzlokation, außer bei komplexeren Anschlusssituation können es mehrere sein) mit den dahinter elektrotechnisch vebundenen Marktlokationen (und den ggf. vorhandenen Tranchen), mit allen technischen Ressourcen der Marktlokationen, den vorhandenen Messlokationen, die für die Energiemengenermittlung notwendig sind um die erforderlichen Verwendungszwecke zu bedienen, sowie alle an dem Lokationsbündel vorkommenden Steuerbare Ressourcen, wobei die steuerbare Ressource ohne Zuordnung zu einer technichen Ressource übermittelt wird, da dies durch den MSB über eine Stammdatennachricht erfolgt)
+  description: Mit diesen API-Webdienst wird die Übermittlung von Lokationsbündeln umgesetzt. Ein Lokationsbündel beinhaltet alle Netzlokationen (in der Regel genau eine Netzlokation, außer bei komplexeren Anschlusssituation können es mehrere sein) mit den dahinter elektrotechnisch vebundenen Marktlokationen (und den ggf. vorhandenen Tranchen), mit allen technischen Ressourcen der Marktlokationen, den vorhandenen Messlokationen, die für die Energiemengenermittlung notwendig sind um die erforderlichen Verwendungszwecke zu bedienen, sowie alle an dem Lokationsbündel vorkommenden steuerbare Ressourcen, wobei die steuerbare Ressource ohne Zuordnung zu einer technischen Ressource übermittelt wird, da dies durch den MSB über eine Stammdatennachricht erfolgt)
 
 paths:
   /locationBundle/v1:
