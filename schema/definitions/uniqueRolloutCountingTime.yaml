@@ -4,7 +4,6 @@ components:
       required:
       - codeCountingTime
       - executionTimeFrom
-      - executionTimeUntil
       - version
       - startCodeRegisterBeginYear
       - yearlyRolloutCountTimeRegisters
@@ -19,19 +18,13 @@ components:
         executionTimeFrom:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
           description: "Zeitpunkt Gültig Ab"
-        executionTimeUntil:
-          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
-          description: "Zeitpunkt Gültig Ab"
         version:
           $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
           description: "Versionsangabe"
         orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        startCodeRegisterBeginYear:
-          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
-          description: "Das zum 01.01. des jeweiligen Kalendarjahres aktive Register"
         yearlyRolloutCountTimeRegisters:
-          $ref: './yearlyRolloutCountTimeRegisters.yaml#/components/schemas/yearlyRolloutCountTimeRegisters'
+          $ref: './uniqueRolloutCountTimeRegisters.yaml#/components/schemas/uniqueRolloutCountTimeRegisters'
           description: "Das zum 01.01. des jeweiligen Kalendarjahres aktive Register"
          
