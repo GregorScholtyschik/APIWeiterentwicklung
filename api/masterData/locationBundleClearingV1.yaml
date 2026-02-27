@@ -1,0 +1,64 @@
+openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
+info: # Allgemeine Infos zur Schnittstelle
+  title: EDI@Energy API-Webdienst zur Übermittlung von Clearings zu Lokationsbündeln
+  version: 1.0.0
+  description: Mit diesen API-Webdienst wird die Übermittlung von Clearings zu Lokationsbündeln umgesetzt. Dabei kann der Datenstand im IT System des Berechtigten dargestellt werden und zudem wenn erforderlich die Erwartung an die Daten, wie der Berechtigte sie gerne vom Verantwortlichen bekommen würde. Ein Lokationsbündel beinhaltet alle Netzlokationen (in der Regel genau eine Netzlokation, außer bei komplexeren Anschlusssituation können es mehrere sein) mit den dahinter elektrotechnisch verbundenen Marktlokationen (und den ggf. vorhandenen Tranchen), mit allen technischen Ressourcen der Marktlokationen, den vorhandenen Messlokationen, die für die Energiemengenermittlung notwendig sind um die erforderlichen Verwendungszwecke zu bedienen, sowie alle an dem Lokationsbündel vorkommenden steuerbare Ressourcen, wobei die steuerbare Ressource ohne Zuordnung zu einer technischen Ressource übermittelt wird, da dies durch den MSB über eine Stammdatennachricht erfolgt)
+
+paths:
+  /locationBundle/v1:
+    post:
+      summary: Übermittlung von Clearings zu Lokationsbündeln
+      description: Übermittlung von Clearings zu Lokationsbündeln
+      tags:
+        - Übermittlung von Lokationsbündeln
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/masterData/locationBundleClearing.yaml#/components/schemas/locationBundleClearing'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
