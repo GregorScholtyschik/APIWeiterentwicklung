@@ -1,0 +1,14 @@
+components:
+  schemas:
+    listOfSwitchingTimes:
+      required:
+      - codeCountingTime
+      - frequencyTransmission
+      type: object
+      x-Translation:
+        de: "Liste der Übersicht der Schaltzeitdefinitionen"
+      properties:
+        codeSwitchingTime:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+        frequencyTransmission:
+          $ref: './frequencyTransmission.yaml#/components/schemas/frequencyTransmission'

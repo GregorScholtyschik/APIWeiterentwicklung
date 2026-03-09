@@ -1,0 +1,15 @@
+components:
+  schemas:
+    yearlyRolloutSwitchingTimeState:
+      required:
+      - executionTimeFrom
+      - switchingOperation
+      type: object
+      description: "Angabe eines Zeitpunktes und das zu diesem Zeitpunkt aktive Register der Zählzeit."
+      x-Translation:
+        de: "Angabe eines Zeitpunktes und das zu diesem Zeitpunkt aktive Register der Zählzeit."
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+        state:
+          $ref: './switchingTimeState.yaml#/components/schemas/switchingTimeState'
