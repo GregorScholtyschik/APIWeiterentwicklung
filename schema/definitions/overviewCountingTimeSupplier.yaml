@@ -17,6 +17,6 @@ components:
         orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        countingTimes:
+        listOfCountingTimes:
           $ref: './countingTimesSupplier.yaml#/components/schemas/countingTimesSupplier'
           description: "Liste der Zählzeitdefinitionen"          

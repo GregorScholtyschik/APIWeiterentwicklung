@@ -48,7 +48,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/definitions/overviewSwitchingTime.yaml#/components/schemas/overviewSwitchingTime'
+             $ref: '../../schema/definitions/overviewPowerCurve.yaml#/components/schemas/overviewPowerCurve'
       responses:
         "202":
           description: accepted
