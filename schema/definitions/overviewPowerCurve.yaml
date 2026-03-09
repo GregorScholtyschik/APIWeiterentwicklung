@@ -1,12 +1,12 @@
 components:
   schemas:
-    overviewCountingTimeSupplier:
+    overviewPowerCurve:
       required:
       - executionTimeFrom
       - version
       type: object
       x-Translation:
-        de: "Übersicht der Zählzeiten eines LF"
+        de: "Übersicht der Leistungskurven"
       properties:
         executionTimeFrom:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
@@ -17,6 +17,6 @@ components:
         orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        countingTimes:
-          $ref: './countingTimesSupplier.yaml#/components/schemas/countingTimesSupplier'
-          description: "Liste der Zählzeitdefinitionen"          
+        switchingTimes:
+          $ref: './switchingTimes.yaml#/components/schemas/switchingTimes'
+          description: "Liste der Schaltzeiten" 

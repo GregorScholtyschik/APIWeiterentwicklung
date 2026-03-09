@@ -2,13 +2,13 @@ components:
   schemas:
     countingTimeDefinitionType:
       required:
-      - countingTimeDefinitionTypeEnum
+      - countingTimeType
       type: object
       description: "Angabe des Zählzeitdefinitionstypen. Das Feld description ist anzugeben, wenn es sich um einen sonstigen Zählzeitdefinitionstypen handelt."
       x-Translation:
         de: "Angabe des Zählzeitdefinitionstypen"
       properties:
-        countingTimeDefinitionTypeEnum:
+        countingTimeType:
           $ref: './countingTimeDefinitionTypeEnum.yaml#/components/schemas/countingTimeDefinitionTypeEnum'
         description:
           $ref: './../descriptionAn35.yaml#/components/schemas/descriptionAn35'
