@@ -6,7 +6,7 @@ components:
       - frequencyTransmission
       type: object
       x-Translation:
-        de: "Liste der Übersicht der Schaltzeitdefinitionen"
+        de: "Liste der Übersicht der Schaltzeiten"
       properties:
         code:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'

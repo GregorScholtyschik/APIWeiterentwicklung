@@ -20,4 +20,4 @@ components:
           description: "Referenz auf eine mögliche Reklamation"
         lsitOfCountingTimes:
           $ref: './countingTimesNetworkOperator.yaml#/components/schemas/countingTimesNetworkOperator'
-          description: "Liste der Zählzeitdefinitionen"
+          description: "Liste der Zählzeiten des NB."

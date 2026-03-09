@@ -19,4 +19,4 @@ components:
           description: "Referenz auf eine mögliche Reklamation"
         listOfCountingTimes:
           $ref: './countingTimesSupplier.yaml#/components/schemas/countingTimesSupplier'
-          description: "Liste der Zählzeitdefinitionen"          
+          description: "Übersicht der Zählzeiten eines LF."          

@@ -9,9 +9,9 @@ components:
       - startPowerStateBeginYear
       - yearlyRolloutSwitchingTimes
       type: object
-      description: "Jährlich ausgerollte Schaltzeitdefinition"
+      description: "Jährlich ausgerollte Schaltzeit"
       x-Translation:
-        de: "Jährlich ausgerollte Schaltzeitdefinition"
+        de: "Jährlich ausgerollte Schaltzeit"
       properties:
         code:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'

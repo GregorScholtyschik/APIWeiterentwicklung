@@ -3,8 +3,8 @@ components:
     countingTimesSupplier:
       type: array
       minItems: 0
-      description: "Liste der Zählzeitdefinitionen des LF"
+      description: "Liste der Zählzeiten des LF"
       x-Translation:
-        de: "Liste der Zählzeitdefinitionen des LF"
+        de: "Liste der Zählzeiten des LF"
       items:
         $ref: './countingTimeSupplier.yaml#/components/schemas/countingTimeSupplier'

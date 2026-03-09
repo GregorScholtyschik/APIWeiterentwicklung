@@ -10,7 +10,7 @@ components:
       - codeRegister     
       type: object
       x-Translation:
-        de: "Liste der Übersicht der Zählzeitdefinitionen des NB"
+        de: "Liste der Übersicht der Zählzeiten des NB"
       properties:
         code:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
@@ -23,7 +23,7 @@ components:
           $ref: './../trueOrFalse.yaml#/components/schemas/trueOrFalse'
           description: "Angabe, ob die Zählzeit bestellbar ist"
         countingTimeType:
-          $ref: './countingTimeDefinitionType.yaml#/components/schemas/countingTimeDefinitionType'
+          $ref: './countingTimeTypeEnum.yaml#/components/schemas/countingTimeTypeEnum'
         codeRegisters:
           $ref: './codeRegisterNetworkOperators.yaml#/components/schemas/codeRegisterNetworkOperators'
           description: "Code des Registers einer Zählzeit"
