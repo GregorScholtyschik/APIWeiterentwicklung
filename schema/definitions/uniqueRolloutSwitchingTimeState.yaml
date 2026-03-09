@@ -1,6 +1,6 @@
 components:
   schemas:
-    yearlyRolloutSwitchingTimeState:
+    uniqueRolloutSwitchingTimeState:
       required:
       - executionTimeFrom
       - state
@@ -10,6 +10,6 @@ components:
         de: "Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen Status der Schalthandlung."
       properties:
         executionTimeFrom:
-          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: './../dateAndTime/hourAndMinute.yaml#/components/schemas/hourAndMinute'
         state:
           $ref: './switchingTimeState.yaml#/components/schemas/switchingTimeState'

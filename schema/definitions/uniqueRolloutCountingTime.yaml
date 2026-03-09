@@ -2,17 +2,17 @@ components:
   schemas:
     uniqueRolloutCountingTime:
       required:
-      - codeCountingTime
+      - code
       - executionTimeFrom
       - version
       - startCodeRegisterBeginYear
-      - yearlyRolloutCountTimeRegisters
+      - uniqueRolloutCountTimeRegisters
       type: object
       description: "Einmalig ausgerollte Zählzeit"
       x-Translation:
         de: "Einmalig ausgerollte Zählzeit"
       properties:
-        codeCountingTime:
+        code:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
           description: "Code der Zählzeit"
         executionTimeFrom:
@@ -24,7 +24,10 @@ components:
         orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        yearlyRolloutCountTimeRegisters:
-          $ref: './uniqueRolloutCountTimeRegisters.yaml#/components/schemas/uniqueRolloutCountTimeRegisters'
+        startCodeRegisterBeginYear:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
           description: "Das zum 01.01. des jeweiligen Kalendarjahres aktive Register"
+        uniqueRolloutCountTimeRegisters:
+          $ref: './uniqueRolloutCountTimeRegisters.yaml#/components/schemas/uniqueRolloutCountTimeRegisters'
+          description: "Die ausgerollte Zählzeit mit den Registern und deren Änderungszeitpunkte über das Kalendarjahr"
          
